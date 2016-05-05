@@ -80,7 +80,7 @@ public class Algorithms1 {
 			else
 			{
 				System.out.println("\nFound the element at index " + middle);
-				lowIndex = highIndex+1; // this stop the while loop
+				lowIndex = highIndex+1; // this stops the while loop
 			}
 			
 		}
