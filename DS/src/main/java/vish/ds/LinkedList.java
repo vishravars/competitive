@@ -54,7 +54,6 @@ public class LinkedList {
 		Link pdel = null;
 		while(pcurr != null ) 
 		{
-			System.out.println("Visiting element " + pcurr.data);
 			if(pcurr.data == key) {
 				if(pcurr == first) {
 					first = pcurr.next;
@@ -77,11 +76,9 @@ public class LinkedList {
 	public static void main(String[] args) {
 		LinkedList ll = new LinkedList();
 		
-		ll.insert(1);
-		ll.insert(2);
-		ll.insert(3);
-		ll.insert(4);
-		ll.insert(4);
+		for(int i=0; i< 10; i++) {
+			ll.insert(i);
+		}
 		
 		ll.printAllElements();
 		

@@ -42,13 +42,43 @@ public class Algorithms1 {
 				if(array[j] < array[minIndex]) {
 					minIndex = j;
 				}
-				
 			}
-			
 			swapValues(minIndex, i);
-			
+		}
+	}
+	
+	public void findSmallestLargest() {
+		
+		int smallest = array[0];
+		int largest = array[0];
+		
+		for(int i=0; i< array.length; i++) {
+			if(array[i] > largest)
+				largest = array[i];
+			if(array[i] < smallest)
+				smallest = array[i];
 		}
 		
+		System.out.println("Largest: " + largest + ", Smallest: " + smallest);
+		
+	}
+	
+	public void insertionSort() 
+	{	
+		//6,3,8,9,11,2,7,4,14,11
+		
+		for(int i = 1; i< array.length; i++) {
+			
+			int j = i;
+			
+			int toInsert = array[i];
+			
+			while(j > 0 && array[j-1] > toInsert) {
+				array[j] = array[j-1];
+				j--;
+			}
+			array[j] = toInsert;
+		}
 	}
 	
 	private void printAllArrayElements() {
@@ -87,20 +117,22 @@ public class Algorithms1 {
 		
 	}
 
+	
 	public static void main(String[] args) 
 	{
 		
 		Algorithms1 algo = new Algorithms1();
 		
-		algo.linearSearch(11);
+		//algo.linearSearch(11);
 		
 		//algo.bubbleSort();
-		algo.selectionSort();
-		
+		//algo.selectionSort();
+		algo.insertionSort();
 		algo.printAllArrayElements();
 		
 		algo.binarySearch(2);
 		
+		algo.findSmallestLargest();
 		
 	}
 	
